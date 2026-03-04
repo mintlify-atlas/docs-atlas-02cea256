@@ -1,0 +1,155 @@
+{
+  "projectType": "frontend",
+  "projectName": "Sync UI",
+  "projectDescription": "A sleek UI library for Design Engineers, offering beautifully designed components built with MUI and Motion.",
+  "theme": "willow",
+  "primaryColor": "#7c7c7c",
+  "lightColor": "#040404",
+  "darkColor": "#c9c9c9",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "story"
+            ]
+          },
+          {
+            "group": "Installation",
+            "pages": [
+              "installation",
+              "installation/nextjs",
+              "installation/vite",
+              "installation/react-router",
+              "installation/manual"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Components",
+        "groups": [
+          {
+            "group": "Actions",
+            "pages": [
+              "components/buttons"
+            ]
+          },
+          {
+            "group": "Layout & Navigation",
+            "pages": [
+              "components/grids",
+              "components/tabs",
+              "components/docks",
+              "components/separators"
+            ]
+          },
+          {
+            "group": "Display",
+            "pages": [
+              "components/cards",
+              "components/avatars",
+              "components/texts",
+              "components/backgrounds",
+              "components/loaders",
+              "components/skeletons",
+              "components/carousels",
+              "components/pointers"
+            ]
+          },
+          {
+            "group": "Forms & Inputs",
+            "pages": [
+              "components/forms",
+              "components/textfields",
+              "components/autocompletes",
+              "components/datepickers",
+              "components/timepickers"
+            ]
+          },
+          {
+            "group": "Data & Organization",
+            "pages": [
+              "components/tables",
+              "components/accordions",
+              "components/paginations"
+            ]
+          },
+          {
+            "group": "Overlays",
+            "pages": [
+              "components/dialogs"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Blocks",
+        "groups": [
+          {
+            "group": "UI Blocks",
+            "pages": [
+              "blocks/hero",
+              "blocks/cta",
+              "blocks/pricing",
+              "blocks/stats"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Resources",
+        "groups": [
+          {
+            "group": "More",
+            "pages": [
+              "changelog",
+              "templates",
+              "contributing"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "125+ animated React components built with MUI and Motion",
+    "Pre-built UI blocks for landing pages (Hero, CTA, Pricing, Stats)",
+    "Framework support for Next.js, Vite, and React Router",
+    "Dark mode support with beautiful animations",
+    "Copy-paste components with smooth interactions",
+    "Professional templates for SaaS, Portfolio, and Startup sites"
+  ],
+  "publicApiSurface": [
+    "Buttons (Neubrutalism, Animated Border, Gradient Shine, Underline, Send Icon, Expand, Hover Arrow, Glitch, Outline Fill, Elastic Slide)",
+    "Cards (Lens Card with Twitter embed support)",
+    "Forms (Multi-step, Login, Register, Contact)",
+    "TextFields (OTP, Echo Inputs)",
+    "Date Pickers (Single, Range, Presets, With Time)",
+    "Time Pickers (12-Hour, 24-Hour, With Seconds, Presets)",
+    "Autocompletes (Smart input suggestions)",
+    "Dialogs (Blur, Notification, Sidebar overlays)",
+    "Grids (Masonry, Bento layouts)",
+    "Tables (Responsive, sortable data tables)",
+    "Avatars (User profile system with badges)",
+    "Loaders (Animated loading indicators)",
+    "Skeletons (Loading placeholders)",
+    "Carousels (Swipeable content sliders)",
+    "Accordions (Collapsible content)",
+    "Paginations (Numeric, progress bar)",
+    "Tabs (Content organization)",
+    "Docks (Context-aware navigation)",
+    "Backgrounds (Magnetic, grid variants)",
+    "Texts (Video text, typography presets)",
+    "Separators (Dividers and separators)",
+    "Pointers (Directional visual cues)",
+    "Hero Blocks (Left-aligned, Center-aligned, Search)",
+    "CTA Blocks (Call-to-action sections)",
+    "Pricing Blocks (Pricing tables)",
+    "Stats Blocks (Metric displays)"
+  ]
+}
