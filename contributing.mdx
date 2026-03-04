@@ -1,0 +1,239 @@
+---
+title: Contributing
+description: Guidelines for contributing to Sync UI
+---
+
+We love your input! We want to make contributing to Sync UI as easy and transparent as possible, whether it's:
+
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+
+## Getting Started
+
+Sync UI uses GitHub to host code, track issues and feature requests, as well as accept pull requests.
+
+### Development Workflow
+
+We use [GitHub Flow](https://guides.github.com/introduction/flow/index.html) for our development process. Pull requests are the best way to propose changes to the codebase.
+
+**Steps to contribute:**
+
+1. **Fork** the repo and create your branch from `main`
+2. If you've added code that should be tested, **add tests**
+3. If you've changed APIs, **update the documentation**
+4. Ensure the **test suite passes**
+5. Make sure your **code lints**
+6. **Issue that pull request**
+
+## Quick Start
+
+```bash
+# Fork and clone the repository
+git clone https://github.com/YOUR_USERNAME/syncui.git
+cd syncui
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+# Create a new branch for your feature
+git checkout -b feature/amazing-feature
+```
+
+## Contribution Guidelines
+
+### Code Style
+
+- **Indentation:** Use 2 spaces for indentation (not tabs)
+- **Linting:** Run `npm run lint` to ensure style consistency
+- **Formatting:** Follow existing code conventions in the project
+
+### Component Guidelines
+
+When creating or modifying components:
+
+- **Accessibility:** Ensure all components meet accessibility standards
+- **Responsiveness:** Test components across different screen sizes
+- **Dark Mode:** Include dark mode support for all visual components
+- **Animation:** Use Motion (motion/react) for smooth animations
+- **MUI Integration:** Build on top of Material UI components when possible
+
+### Commit Messages
+
+Write clear, descriptive commit messages:
+
+```bash
+# Good commit messages
+git commit -m "feat: add amazing feature"
+git commit -m "fix: resolve button hover state"
+git commit -m "docs: update installation guide"
+
+# Format: type: description
+# Types: feat, fix, docs, style, refactor, test, chore
+```
+
+**Commit Message Types:**
+
+- `feat:` New feature
+- `fix:` Bug fix
+- `docs:` Documentation changes
+- `style:` Code style changes (formatting, missing semicolons, etc.)
+- `refactor:` Code refactoring
+- `test:` Adding or updating tests
+- `chore:` Maintenance tasks
+
+## Reporting Bugs
+
+We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/AbhiVarde/syncui/issues/new).
+
+### Writing Good Bug Reports
+
+Great bug reports tend to have:
+
+- **A quick summary and/or background**
+- **Steps to reproduce**
+  - Be specific!
+  - Provide sample code if you can
+- **What you expected would happen**
+- **What actually happens**
+- **Notes** (possibly including why you think this might be happening, or things you tried that didn't work)
+
+### Bug Report Template
+
+```markdown
+## Description
+A clear and concise description of the bug.
+
+## Steps to Reproduce
+1. Go to '...'
+2. Click on '...'
+3. Scroll down to '...'
+4. See error
+
+## Expected Behavior
+What you expected to happen.
+
+## Actual Behavior
+What actually happened.
+
+## Screenshots
+If applicable, add screenshots.
+
+## Environment
+- OS: [e.g. macOS, Windows, Linux]
+- Browser: [e.g. Chrome, Safari, Firefox]
+- Version: [e.g. 22]
+```
+
+## Pull Request Process
+
+1. **Update Documentation:** If you've changed APIs or added features, update the relevant documentation
+2. **Test Your Changes:** Ensure all tests pass and add new tests if needed
+3. **Update Changelog:** Add a note about your changes to the changelog if applicable
+4. **Code Review:** Wait for code review and address any feedback
+5. **Merge:** Once approved, your PR will be merged
+
+### Pull Request Template
+
+```markdown
+## Description
+Describe what this PR does and why.
+
+## Type of Change
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change
+- [ ] Documentation update
+
+## Testing
+Describe how you tested your changes.
+
+## Screenshots
+If applicable, add screenshots.
+
+## Checklist
+- [ ] My code follows the project's style guidelines
+- [ ] I have performed a self-review of my code
+- [ ] I have commented my code where necessary
+- [ ] I have updated the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix/feature works
+- [ ] New and existing tests pass locally
+```
+
+## Feature Requests
+
+We welcome feature requests! Open an issue with:
+
+- Clear description of the feature
+- Use cases and benefits
+- Possible implementation approach (optional)
+- Examples from other libraries (optional)
+
+## Testing
+
+Before submitting a pull request:
+
+```bash
+# Run linting
+npm run lint
+
+# Run tests (if available)
+npm test
+
+# Build the project
+npm run build
+```
+
+## Documentation
+
+If you're adding new components or features:
+
+- Add documentation to the appropriate MDX file
+- Include code examples
+- Add component variants
+- Document all props and options
+- Update navigation if needed
+
+## License
+
+By contributing, you agree that your contributions will be licensed under the [MIT License](http://choosealicense.com/licenses/mit/).
+
+Any contributions you make will be under the same MIT Software License that covers the project. When you submit code changes, your submissions are understood to be under the same license.
+
+## Code of Conduct
+
+Be respectful, inclusive, and professional in all interactions. We're here to build great software together.
+
+### Our Standards
+
+- Use welcoming and inclusive language
+- Be respectful of differing viewpoints and experiences
+- Gracefully accept constructive criticism
+- Focus on what is best for the community
+- Show empathy towards other community members
+
+## Questions?
+
+If you have questions about contributing:
+
+- Check existing [issues](https://github.com/AbhiVarde/syncui/issues)
+- Open a new issue with your question
+- Reach out on [Twitter/X](https://x.com/syncuidesign)
+
+---
+
+<Note>
+Thank you for contributing to Sync UI! Your contributions help make this library better for everyone.
+</Note>
+
+## Resources
+
+- [GitHub Repository](https://github.com/AbhiVarde/syncui)
+- [Documentation](https://syncui.design/docs)
+- [Components](https://syncui.design/components)
+- [Issue Tracker](https://github.com/AbhiVarde/syncui/issues)

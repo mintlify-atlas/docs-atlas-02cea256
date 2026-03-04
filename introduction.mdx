@@ -1,0 +1,180 @@
+---
+title: Introduction to Sync UI
+description: Free React UI library with 125+ components, 10+ blocks, and 3 premium templates. Built with MUI and Motion.
+---
+
+Welcome to Sync UI - a modern, production-ready React component library that combines the power of Material UI (MUI) with the smooth animations of Motion (motion/react).
+
+## What is Sync UI?
+
+Sync UI is a **free and open-source** React UI library that provides developers with:
+
+- **125+ animated components** - Production-ready React components with smooth animations
+- **10+ pre-built blocks** - Complete UI sections for landing pages
+- **3 premium templates** - Professional templates to launch faster
+- **Copy-paste ready** - No complex installation, just copy and use
+
+## Key Features
+
+<CardGroup cols={2}>
+  <Card title="Beautiful Design" icon="palette">
+    Modern, polished UI with smooth animations built into every component
+  </Card>
+  <Card title="Production Ready" icon="rocket">
+    Battle-tested components used in real projects by developers worldwide
+  </Card>
+  <Card title="Fully Accessible" icon="universal-access">
+    Built with accessibility best practices and ARIA standards
+  </Card>
+  <Card title="Highly Customizable" icon="sliders">
+    Easy to modify and extend to match your design system
+  </Card>
+</CardGroup>
+
+## Tech Stack
+
+Sync UI is built with modern, industry-standard technologies:
+
+| Category | Technologies |
+|----------|-------------|
+| **Frontend** | React, Next.js |
+| **Styling** | Material UI (MUI) |
+| **Animation** | Motion (motion/react) |
+| **Icons** | React Icons |
+
+## Quick Example
+
+Here's a simple example of a Sync UI button with animations:
+
+```jsx
+import { Button, useTheme } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const MyButton = () => {
+  const theme = useTheme();
+
+  return (
+    <MotionButton
+      variant="contained"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      sx={{
+        backgroundColor: theme.palette.mode === "dark" ? "#000000" : "#FFFFFF",
+        color: "text.primary",
+        border: "1px solid",
+        borderColor: "divider",
+      }}
+    >
+      Click Me
+    </MotionButton>
+  );
+};
+
+export default MyButton;
+```
+
+## Why Choose Sync UI?
+
+<AccordionGroup>
+  <Accordion title="Free & Open Source">
+    All 125+ components and 10+ blocks are completely free. Premium templates are available at affordable prices ($29 each or $79 for the bundle).
+  </Accordion>
+  <Accordion title="No Vendor Lock-in">
+    Components are built with MUI and Motion - industry-standard libraries you already know. No proprietary dependencies.
+  </Accordion>
+  <Accordion title="Active Development">
+    Regular updates with new components, improvements, and community-driven enhancements. Check out our [changelog](/changelog).
+  </Accordion>
+  <Accordion title="Global Community">
+    Trusted by developers in 100+ countries with 85+ GitHub stars and growing.
+  </Accordion>
+</AccordionGroup>
+
+## What's Included?
+
+### Components
+
+Over 125 production-ready components including:
+
+- **Interactive Elements**: Buttons, Forms, Autocompletes, Date Pickers, Time Pickers
+- **Content Display**: Cards, Tables, Tabs, Accordions, Carousels
+- **Feedback**: Loaders, Dialogs, Skeletons
+- **Navigation**: Docks, Grids, Pagination
+- **Visual**: Avatars, Backgrounds, Separators
+
+[Browse all components →](/components)
+
+### Blocks
+
+Pre-built UI sections ready to use:
+
+- **Hero Blocks** (3 variants) - Eye-catching landing page headers
+- **CTA Blocks** (4 variants) - Call-to-action sections
+- **Pricing Blocks** (3 variants) - Professional pricing tables
+- **Stats Blocks** - Data visualization sections
+
+[Explore blocks →](/blocks)
+
+### Templates
+
+Professional templates to launch faster:
+
+- **Startup Template** ($29) - Complete landing page
+- **SaaS Template** ($29) - Conversion-focused layout
+- **Portfolio Template** ($29) - Modern animated portfolio
+- **Bundle** ($79) - All 3 templates (Save $8)
+
+[View templates →](/templates)
+
+## Getting Started
+
+Ready to build something amazing? Choose your framework to get started:
+
+<CardGroup cols={2}>
+  <Card title="Next.js" icon="N" href="/installation/nextjs">
+    Set up Sync UI in your Next.js project
+  </Card>
+  <Card title="Vite" icon="bolt" href="/installation/vite">
+    Set up Sync UI with Vite
+  </Card>
+  <Card title="React Router" icon="route" href="/installation/react-router">
+    Set up Sync UI with React Router
+  </Card>
+  <Card title="Manual Setup" icon="wrench" href="/installation/manual">
+    Add Sync UI to any React project
+  </Card>
+</CardGroup>
+
+## Recognition
+
+<Note>
+  Sync UI has been featured on [Vercel Community Showcase](https://community.vercel.com/t/sync-ui-animated-ui-kit-with-mui-framer-motion-next-js-vercel/18039) and is trusted by developers worldwide.
+</Note>
+
+## Support the Project
+
+Sync UI is free and open source. Your support helps keep it actively maintained:
+
+- Give us a [star on GitHub](https://github.com/AbhiVarde/syncui)
+- [Sponsor the project](https://github.com/sponsors/AbhiVarde)
+- [Buy the creator a coffee](https://buymeacoffee.com/abhivarde9h)
+- Purchase a [premium template](/templates)
+
+## Next Steps
+
+<Steps>
+  <Step title="Install Sync UI">
+    Follow our [installation guide](/installation) for your framework
+  </Step>
+  <Step title="Explore Components">
+    Browse our [component library](/components) and copy what you need
+  </Step>
+  <Step title="Read the Story">
+    Learn about the [journey behind Sync UI](/story)
+  </Step>
+  <Step title="Start Building">
+    Create beautiful, animated UIs in minutes
+  </Step>
+</Steps>

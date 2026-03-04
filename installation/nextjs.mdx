@@ -1,0 +1,228 @@
+---
+title: Next.js Installation
+description: Set up Sync UI in your Next.js project with App Router or Pages Router
+---
+
+This guide will help you set up Sync UI in a Next.js project. Sync UI works seamlessly with both the App Router and Pages Router.
+
+## Create a New Project
+
+Create a new Next.js application using `create-next-app`:
+
+<CodeGroup>
+```bash npm
+npx create-next-app@latest my-app
+```
+
+```bash yarn
+yarn create next-app my-app
+```
+
+```bash pnpm
+pnpm create next-app my-app
+```
+
+```bash bun
+bun create next-app my-app
+```
+</CodeGroup>
+
+During setup, you'll be asked several questions. Here are the recommended settings:
+
+```
+✔ Would you like to use TypeScript? … No / Yes
+✔ Would you like to use ESLint? … No / Yes
+✔ Would you like to use Tailwind CSS? … No / Yes
+✔ Would you like to use `src/` directory? … No / Yes
+✔ Would you like to use App Router? (recommended) … No / Yes
+✔ Would you like to customize the default import alias (@/*)? … No / Yes
+```
+
+<Note>
+  Sync UI works with all configurations. Choose what fits your project best.
+</Note>
+
+## Navigate to Your Project
+
+Move into your newly created project directory:
+
+```bash
+cd my-app
+```
+
+## Install Dependencies
+
+Add the required packages for Sync UI:
+
+<CodeGroup>
+```bash npm
+npm install @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash yarn
+yarn add @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash pnpm
+pnpm add @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash bun
+bun add @mui/material @emotion/react @emotion/styled motion react-icons
+```
+</CodeGroup>
+
+### What's Installed
+
+| Package | Purpose |
+|---------|--------|
+| `@mui/material` | Core Material UI components |
+| `@emotion/react` | CSS-in-JS styling engine (required by MUI) |
+| `@emotion/styled` | Styled components API (required by MUI) |
+| `motion` | Animation library (motion/react) |
+| `react-icons` | Icon library with thousands of icons |
+
+## Start Development
+
+Launch your development server:
+
+<CodeGroup>
+```bash npm
+npm run dev
+```
+
+```bash yarn
+yarn dev
+```
+
+```bash pnpm
+pnpm dev
+```
+
+```bash bun
+bun dev
+```
+</CodeGroup>
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see your app running.
+
+## Using Components
+
+Now you can start using Sync UI components. Here's a quick example:
+
+<Steps>
+  <Step title="Create a Component File">
+    Create a new file, e.g., `components/AnimatedButton.jsx`
+  </Step>
+  
+  <Step title="Copy Component Code">
+    Browse the [component library](/components) and copy the code for any component
+  </Step>
+  
+  <Step title="Import and Use">
+    Import your component in any page or component:
+    
+    ```jsx
+    import AnimatedButton from '@/components/AnimatedButton';
+    
+    export default function Home() {
+      return (
+        <main>
+          <AnimatedButton />
+        </main>
+      );
+    }
+    ```
+  </Step>
+</Steps>
+
+## Example Component
+
+Here's a complete example of a Sync UI button in Next.js:
+
+```jsx app/components/NeubrutalismButton.jsx
+import { Button, useTheme } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const NeubrutalismButton = () => {
+  const theme = useTheme();
+
+  return (
+    <MotionButton
+      variant="contained"
+      sx={{
+        backgroundColor: theme.palette.mode === "dark" ? "#000000" : "#FFFFFF",
+        color: "text.primary",
+        border: "1px solid",
+        borderColor: "divider",
+        boxShadow: "4px 4px 0 currentColor",
+        borderRadius: 0,
+        transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+        "&:hover": {
+          borderColor: "divider",
+          boxShadow: "2px 2px 0 currentColor",
+          backgroundColor: theme.palette.mode === "dark" ? "#000000" : "#FFFFFF",
+        },
+      }}
+    >
+      Neubrutalism
+    </MotionButton>
+  );
+};
+
+export default NeubrutalismButton;
+```
+
+<Tip>
+  Use the `'use client'` directive at the top of files that use Motion animations if you're using the App Router.
+</Tip>
+
+## App Router Considerations
+
+If you're using Next.js App Router, components with animations need the `'use client'` directive:
+
+```jsx app/components/AnimatedButton.jsx
+'use client';
+
+import { Button } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+export default function AnimatedButton() {
+  return (
+    <MotionButton whileHover={{ scale: 1.05 }}>
+      Click Me
+    </MotionButton>
+  );
+}
+```
+
+## You're All Set!
+
+You can now start building with Sync UI:
+
+<CardGroup cols={2}>
+  <Card title="Components" icon="cube" href="/components">
+    Copy-paste ready UI elements with animations
+  </Card>
+  <Card title="Blocks" icon="layer-group" href="/blocks">
+    Pre-built page sections for landing pages
+  </Card>
+  <Card title="Templates" icon="palette" href="/templates">
+    Professional templates to launch faster
+  </Card>
+  <Card title="Story" icon="book" href="/docs/story">
+    Learn about the journey behind Sync UI
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+Simply copy any component code from our library and paste it into your project. No additional setup needed!
+
+<Note>
+  All Sync UI components are framework-agnostic and work seamlessly with Next.js, whether you're using App Router or Pages Router.
+</Note>

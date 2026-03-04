@@ -1,122 +1,133 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Sync UI",
+  "theme": "willow",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7c7c7c",
+    "light": "#040404",
+    "dark": "#c9c9c9"
   },
-  "favicon": "/favicon.svg",
+
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/AbhiVarde/syncui"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/AbhiVarde/syncui",
+      "x": "https://x.com/syncuidesign"
+    }
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "introduction",
+              "story"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Installation",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "installation",
+              "installation/nextjs",
+              "installation/vite",
+              "installation/react-router",
+              "installation/manual"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Components",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Actions",
             "pages": [
-              "api-reference/introduction"
+              "components/buttons"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Layout & Navigation",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "components/grids",
+              "components/tabs",
+              "components/docks",
+              "components/separators"
+            ]
+          },
+          {
+            "group": "Display",
+            "pages": [
+              "components/cards",
+              "components/avatars",
+              "components/texts",
+              "components/backgrounds",
+              "components/loaders",
+              "components/skeletons",
+              "components/carousels",
+              "components/pointers"
+            ]
+          },
+          {
+            "group": "Forms & Inputs",
+            "pages": [
+              "components/forms",
+              "components/textfields",
+              "components/autocompletes",
+              "components/datepickers",
+              "components/timepickers"
+            ]
+          },
+          {
+            "group": "Data & Organization",
+            "pages": [
+              "components/tables",
+              "components/accordions",
+              "components/paginations"
+            ]
+          },
+          {
+            "group": "Overlays",
+            "pages": [
+              "components/dialogs"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Blocks",
+        "groups": [
+          {
+            "group": "UI Blocks",
+            "pages": [
+              "blocks/hero",
+              "blocks/cta",
+              "blocks/pricing",
+              "blocks/stats"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Resources",
+        "groups": [
+          {
+            "group": "More",
+            "pages": [
+              "changelog",
+              "templates",
+              "contributing"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }

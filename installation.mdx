@@ -1,0 +1,204 @@
+---
+title: Installation
+description: Set up Sync UI in your React project and start building beautiful UIs
+---
+
+Get started with Sync UI by choosing your preferred React framework below. All our components work seamlessly across different React environments.
+
+## Pick Your Framework
+
+Select your framework to see the specific setup instructions:
+
+<CardGroup cols={2}>
+  <Card title="Next.js" icon="N" href="/docs/installation/nextjs">
+    Set up Sync UI in your Next.js project with App Router or Pages Router
+  </Card>
+  <Card title="Vite" icon="bolt" href="/docs/installation/vite">
+    Set up Sync UI with Vite for fast development and optimized builds
+  </Card>
+  <Card title="React Router" icon="route" href="/docs/installation/react-router">
+    Set up Sync UI with Create React App and React Router
+  </Card>
+  <Card title="Manual Setup" icon="wrench" href="/docs/installation/manual">
+    Add Sync UI to any existing React project manually
+  </Card>
+</CardGroup>
+
+## What You'll Need
+
+Before installing Sync UI, make sure you have:
+
+<Steps>
+  <Step title="Node.js">
+    Node.js 18.17 or later installed on your machine
+  </Step>
+  <Step title="Package Manager">
+    npm, yarn, pnpm, or bun for managing dependencies
+  </Step>
+  <Step title="React Project">
+    An existing React project or create a new one using the framework-specific guides
+  </Step>
+</Steps>
+
+## Core Dependencies
+
+Sync UI requires the following packages:
+
+```bash
+@mui/material         # Material UI components
+@emotion/react        # CSS-in-JS styling (required by MUI)
+@emotion/styled       # Styled components API (required by MUI)
+motion                # Animation library (motion/react)
+react-icons           # Icon library
+```
+
+<Note>
+  These dependencies are installed automatically when you follow the framework-specific installation guides.
+</Note>
+
+## Installation Overview
+
+Regardless of your framework, the installation process follows these steps:
+
+<Steps>
+  <Step title="Create or Open Project">
+    Either create a new React project or open your existing one
+  </Step>
+  <Step title="Install Dependencies">
+    Add the required Sync UI dependencies using your package manager
+  </Step>
+  <Step title="Start Development">
+    Launch your development server and start building
+  </Step>
+  <Step title="Copy Components">
+    Browse the component library and copy-paste components into your project
+  </Step>
+</Steps>
+
+## Quick Start
+
+If you want to try Sync UI immediately, here's the fastest way:
+
+<CodeGroup>
+```bash npm
+npx create-next-app@latest my-app
+cd my-app
+npm install @mui/material @emotion/react @emotion/styled motion react-icons
+npm run dev
+```
+
+```bash yarn
+yarn create next-app my-app
+cd my-app
+yarn add @mui/material @emotion/react @emotion/styled motion react-icons
+yarn dev
+```
+
+```bash pnpm
+pnpm create next-app my-app
+cd my-app
+pnpm add @mui/material @emotion/react @emotion/styled motion react-icons
+pnpm dev
+```
+
+```bash bun
+bun create next-app my-app
+cd my-app
+bun add @mui/material @emotion/react @emotion/styled motion react-icons
+bun dev
+```
+</CodeGroup>
+
+## Framework-Specific Guides
+
+For detailed, framework-specific installation instructions, choose your framework:
+
+### Next.js
+
+Perfect for server-side rendering, static site generation, and production apps.
+
+[View Next.js Setup Guide →](/docs/installation/nextjs)
+
+### Vite
+
+Ideal for fast development with hot module replacement and optimized builds.
+
+[View Vite Setup Guide →](/docs/installation/vite)
+
+### React Router
+
+Great for client-side routing in Create React App projects.
+
+[View React Router Setup Guide →](/docs/installation/react-router)
+
+### Manual Setup
+
+Add Sync UI to any existing React project with manual installation.
+
+[View Manual Setup Guide →](/docs/installation/manual)
+
+## After Installation
+
+Once you've installed Sync UI, you can:
+
+<CardGroup cols={2}>
+  <Card title="Browse Components" icon="cube" href="/components">
+    Explore 125+ animated components ready to copy and paste
+  </Card>
+  <Card title="Explore Blocks" icon="layer-group" href="/blocks">
+    Check out pre-built UI sections for landing pages
+  </Card>
+  <Card title="View Templates" icon="palette" href="/templates">
+    See premium templates to launch your project faster
+  </Card>
+  <Card title="Read the Story" icon="book" href="/docs/story">
+    Learn about the journey behind Sync UI
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Module not found errors">
+    Make sure all dependencies are installed:
+    
+    ```bash
+    npm install @mui/material @emotion/react @emotion/styled motion react-icons
+    ```
+    
+    If using TypeScript, you may also need to install type definitions.
+  </Accordion>
+  
+  <Accordion title="Styling issues or components not rendering">
+    Ensure you have both `@emotion/react` and `@emotion/styled` installed - MUI requires both packages.
+  </Accordion>
+  
+  <Accordion title="Animation not working">
+    Verify that you're importing from `motion/react` (not `framer-motion`):
+    
+    ```jsx
+    import { motion } from "motion/react";
+    ```
+  </Accordion>
+  
+  <Accordion title="Icons not displaying">
+    Make sure `react-icons` is installed and you're importing icons correctly:
+    
+    ```jsx
+    import { IoSend } from "react-icons/io5";
+    import { RxArrowRight } from "react-icons/rx";
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Need help? Join our community on [GitHub Discussions](https://github.com/AbhiVarde/syncui/discussions) or reach out on [Twitter](https://x.com/syncuidesign).
+</Tip>
+
+## Next Steps
+
+Ready to start building? Check out these resources:
+
+- [Component Library](/components) - Browse all available components
+- [Blocks](/blocks) - Pre-built sections for landing pages
+- [Changelog](/docs/changelog) - See what's new in Sync UI

@@ -1,97 +1,220 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: Sync UI Documentation
+description: A sleek UI library for Design Engineers, offering beautifully designed components built with MUI and Motion
+mode: custom
 ---
 
-## Setting up
+<div className="relative overflow-hidden bg-[#000000] text-white py-20">
+  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="max-w-4xl mx-auto text-center">
+      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
+        Beautiful Components,<br />Built for Design Engineers
+      </h1>
+      <p className="text-xl sm:text-2xl text-[#B0B0B0] max-w-3xl mx-auto mb-8">
+        125+ animated React components built with MUI and Motion. Copy, paste, and ship beautiful interfaces faster.
+      </p>
+      <div className="flex flex-wrap gap-4 justify-center items-center">
+        <a 
+          href="/introduction" 
+          className="inline-flex items-center px-6 py-3 rounded-xl bg-[#ffffff] text-[#000000] font-semibold hover:bg-[#e5e5e5] transition-colors no-underline"
+        >
+          Get Started
+        </a>
+        <a 
+          href="/components/buttons" 
+          className="inline-flex items-center px-6 py-3 rounded-xl border border-white/30 bg-white/10 text-white font-semibold hover:bg-white/20 hover:border-white/50 transition-colors no-underline"
+        >
+          Browse Components
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-Get your documentation site up and running in minutes.
+<div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Quick start</h2>
+    <p className="text-base text-gray-600 dark:text-gray-400">Get up and running with Sync UI in minutes</p>
+  </div>
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+  <Steps>
+    <Step title="Choose your framework">
+      Select your preferred React framework. Sync UI works seamlessly with Next.js, Vite, React Router, or any React setup.
+      
+      ```bash
+      # We'll set up the dependencies in the next step
+      ```
+    </Step>
+    
+    <Step title="Install dependencies">
+      Install Material UI, Motion, and other required packages for your framework.
+      
+      <CodeGroup>
+      ```bash npm
+      npm install @mui/material @emotion/react @emotion/styled motion
+      ```
+      
+      ```bash yarn
+      yarn add @mui/material @emotion/react @emotion/styled motion
+      ```
+      
+      ```bash pnpm
+      pnpm add @mui/material @emotion/react @emotion/styled motion
+      ```
+      </CodeGroup>
+      
+      <Note>
+        See the [Installation](/installation) guide for framework-specific setup instructions.
+      </Note>
+    </Step>
+    
+    <Step title="Copy a component">
+      Browse the component library, copy the code, and paste it into your project. All components are fully customizable.
+      
+      ```jsx
+      import { Button } from "@mui/material";
+      import { motion } from "motion/react";
 
-## Make it yours
+      const MotionButton = motion.create(Button);
 
-Design a docs site that looks great and empowers your users.
+      export default function MyButton() {
+        return (
+          <MotionButton
+            variant="contained"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Click me
+          </MotionButton>
+        );
+      }
+      ```
+    </Step>
+    
+    <Step title="Customize and ship">
+      Adjust colors, animations, and styling to match your brand. Every component supports MUI's theming system and custom styling.
+      
+      <Tip>
+        Check out the [Story](/story) to learn about the journey behind Sync UI and how it evolved.
+      </Tip>
+    </Step>
+  </Steps>
+</div>
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
+<div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Explore by category</h2>
+    <p className="text-base text-gray-600 dark:text-gray-400">125+ components organized for easy discovery</p>
+  </div>
 
-## Create beautiful pages
+  <CardGroup cols={3}>
+    <Card title="Actions" icon="hand-pointer" href="/components/buttons">
+      Interactive buttons with smooth animations and hover effects
+    </Card>
+    <Card title="Forms & Inputs" icon="keyboard" href="/components/forms">
+      Complete form components with validation and elegant interactions
+    </Card>
+    <Card title="Layout & Navigation" icon="table-cells" href="/components/grids">
+      Flexible grid systems, tabs, docks, and navigation components
+    </Card>
+    <Card title="Display Components" icon="image" href="/components/cards">
+      Cards, avatars, carousels, and visual elements
+    </Card>
+    <Card title="Data & Organization" icon="table" href="/components/tables">
+      Tables, accordions, and pagination for structured content
+    </Card>
+    <Card title="Overlays" icon="layer-group" href="/components/dialogs">
+      Modals, dialogs, and overlay components
+    </Card>
+  </CardGroup>
+</div>
 
-Everything you need to create world-class documentation.
+<div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Pre-built blocks</h2>
+    <p className="text-base text-gray-600 dark:text-gray-400">Complete UI sections ready to use</p>
+  </div>
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+  <CardGroup cols={2}>
+    <Card title="Hero Sections" icon="rocket" href="/blocks/hero">
+      Left-aligned, center-aligned, and search-focused hero layouts
+    </Card>
+    <Card title="CTA Blocks" icon="bullhorn" href="/blocks/cta">
+      Call-to-action sections to drive conversions
+    </Card>
+    <Card title="Pricing Tables" icon="dollar-sign" href="/blocks/pricing">
+      Professional pricing tables with feature comparisons
+    </Card>
+    <Card title="Stats Displays" icon="chart-bar" href="/blocks/stats">
+      Key metric sections with icons and animations
+    </Card>
+  </CardGroup>
+</div>
 
-## Need inspiration?
+<div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Why Sync UI?</h2>
+    <p className="text-base text-gray-600 dark:text-gray-400">Built for developers who value quality and speed</p>
+  </div>
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="p-6 rounded-xl border border-gray-200 dark:border-[#27272a] bg-white dark:bg-[#1a1d27]">
+      <div className="text-2xl mb-3">⚡</div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Production ready</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">Battle-tested components built with MUI and Motion, ready for real projects</p>
+    </div>
+    
+    <div className="p-6 rounded-xl border border-gray-200 dark:border-[#27272a] bg-white dark:bg-[#1a1d27]">
+      <div className="text-2xl mb-3">🎨</div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Beautiful design</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">Modern, polished UI with smooth animations and attention to detail</p>
+    </div>
+    
+    <div className="p-6 rounded-xl border border-gray-200 dark:border-[#27272a] bg-white dark:bg-[#1a1d27]">
+      <div className="text-2xl mb-3">🔧</div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Fully customizable</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">Easy to modify and extend with MUI's powerful theming system</p>
+    </div>
+    
+    <div className="p-6 rounded-xl border border-gray-200 dark:border-[#27272a] bg-white dark:bg-[#1a1d27]">
+      <div className="text-2xl mb-3">♿</div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Accessible</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">Built with accessibility best practices and ARIA standards</p>
+    </div>
+    
+    <div className="p-6 rounded-xl border border-gray-200 dark:border-[#27272a] bg-white dark:bg-[#1a1d27]">
+      <div className="text-2xl mb-3">📱</div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Responsive</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">Works perfectly on all devices with mobile-first design</p>
+    </div>
+    
+    <div className="p-6 rounded-xl border border-gray-200 dark:border-[#27272a] bg-white dark:bg-[#1a1d27]">
+      <div className="text-2xl mb-3">🚀</div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Framework support</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">Works with Next.js, Vite, React Router, and any React setup</p>
+    </div>
+  </div>
+</div>
+
+<div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+  <div className="rounded-2xl border border-gray-200 dark:border-[#27272a] bg-gray-50 dark:bg-[#1a1d27] p-8 sm:p-12 text-center">
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Ready to build something beautiful?</h2>
+    <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+      Join developers worldwide who are using Sync UI to build stunning interfaces faster
+    </p>
+    <div className="flex flex-wrap gap-4 justify-center">
+      <a 
+        href="/introduction" 
+        className="inline-flex items-center px-6 py-3 rounded-xl bg-[#7c7c7c] text-white font-semibold hover:bg-[#6a6a6a] transition-colors no-underline"
+      >
+        Get Started
+      </a>
+      <a 
+        href="https://github.com/AbhiVarde/syncui" 
+        className="inline-flex items-center px-6 py-3 rounded-xl border border-gray-300 dark:border-[#27272a] bg-white dark:bg-[#1a1d27] text-gray-900 dark:text-white font-semibold hover:border-gray-400 dark:hover:border-[#3a3d47] transition-colors no-underline"
+      >
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</div>

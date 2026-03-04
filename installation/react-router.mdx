@@ -1,0 +1,272 @@
+---
+title: React Router Installation
+description: Set up Sync UI with Create React App and React Router for client-side routing
+---
+
+This guide will help you set up Sync UI in a React project with React Router for client-side routing.
+
+## Create a New Project
+
+Create a new React application using Create React App:
+
+<CodeGroup>
+```bash npm
+npx create-react-app my-app
+```
+
+```bash yarn
+yarn create react-app my-app
+```
+
+```bash pnpm
+pnpm create react-app my-app
+```
+
+```bash bun
+bun create react-app my-app
+```
+</CodeGroup>
+
+<Note>
+  Create React App sets up a modern React project with webpack, Babel, and ESLint configured out of the box.
+</Note>
+
+## Navigate to Your Project
+
+Move into your newly created project directory:
+
+```bash
+cd my-app
+```
+
+## Install Dependencies
+
+Add React Router and the required packages for Sync UI:
+
+<CodeGroup>
+```bash npm
+npm install react-router-dom @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash yarn
+yarn add react-router-dom @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash pnpm
+pnpm add react-router-dom @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash bun
+bun add react-router-dom @mui/material @emotion/react @emotion/styled motion react-icons
+```
+</CodeGroup>
+
+### What's Installed
+
+| Package | Purpose |
+|---------|--------|
+| `react-router-dom` | Client-side routing for React |
+| `@mui/material` | Core Material UI components |
+| `@emotion/react` | CSS-in-JS styling engine (required by MUI) |
+| `@emotion/styled` | Styled components API (required by MUI) |
+| `motion` | Animation library (motion/react) |
+| `react-icons` | Icon library with thousands of icons |
+
+## Start Development
+
+Launch your development server:
+
+<CodeGroup>
+```bash npm
+npm start
+```
+
+```bash yarn
+yarn start
+```
+
+```bash pnpm
+pnpm start
+```
+
+```bash bun
+bun start
+```
+</CodeGroup>
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see your app running.
+
+## Setting Up React Router
+
+To use React Router in your project, set it up in your `App.js`:
+
+```jsx src/App.js
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+## Using Components
+
+Now you can start using Sync UI components:
+
+<Steps>
+  <Step title="Create a Component File">
+    Create a new file, e.g., `src/components/AnimatedButton.jsx`
+  </Step>
+  
+  <Step title="Copy Component Code">
+    Browse the [component library](/components) and copy the code for any component
+  </Step>
+  
+  <Step title="Import and Use">
+    Import your component in any page:
+    
+    ```jsx
+    import AnimatedButton from '../components/AnimatedButton';
+    
+    function Home() {
+      return (
+        <div>
+          <h1>Home Page</h1>
+          <AnimatedButton />
+        </div>
+      );
+    }
+    
+    export default Home;
+    ```
+  </Step>
+</Steps>
+
+## Example Component
+
+Here's a complete example of a Sync UI button with routing:
+
+```jsx src/components/UnderlineButton.jsx
+import { Button } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const UnderlineButton = () => {
+  return (
+    <MotionButton
+      variant="text"
+      sx={{
+        color: "text.primary",
+        position: "relative",
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          width: "100%",
+          height: "1px",
+          bottom: 0,
+          left: 0,
+          backgroundColor: "text.primary",
+          transform: "scaleX(0)",
+          transformOrigin: "bottom right",
+          transition: "transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
+        },
+        "&:hover::after": {
+          transform: "scaleX(1)",
+          transformOrigin: "bottom left",
+        },
+        "&:hover": {
+          backgroundColor: "transparent",
+        },
+      }}
+    >
+      Underline
+    </MotionButton>
+  );
+};
+
+export default UnderlineButton;
+```
+
+Use it with React Router's `Link` component:
+
+```jsx src/pages/Home.jsx
+import { Link } from 'react-router-dom';
+import UnderlineButton from '../components/UnderlineButton';
+
+function Home() {
+  return (
+    <div style={{ padding: '20px' }}>
+      <h1>Welcome to Sync UI</h1>
+      <Link to="/about">
+        <UnderlineButton />
+      </Link>
+    </div>
+  );
+}
+
+export default Home;
+```
+
+## Project Structure
+
+Here's a recommended project structure:
+
+```
+my-app/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── AnimatedButton.jsx
+│   │   ├── Card.jsx
+│   │   └── ...
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   └── ...
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── ...
+```
+
+<Tip>
+  Organize your Sync UI components in the `components/` folder and your pages in the `pages/` folder for better maintainability.
+</Tip>
+
+## You're All Set!
+
+You can now start building with Sync UI and React Router:
+
+<CardGroup cols={2}>
+  <Card title="Components" icon="cube" href="/components">
+    Copy-paste ready UI elements with animations
+  </Card>
+  <Card title="Blocks" icon="layer-group" href="/blocks">
+    Pre-built page sections for landing pages
+  </Card>
+  <Card title="Templates" icon="palette" href="/templates">
+    Professional templates to launch faster
+  </Card>
+  <Card title="Story" icon="book" href="/docs/story">
+    Learn about the journey behind Sync UI
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+Simply copy any component code from our library and paste it into your project. No additional setup needed!
+
+<Note>
+  All Sync UI components work seamlessly with React Router's navigation and are fully compatible with Create React App.
+</Note>

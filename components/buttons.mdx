@@ -1,0 +1,595 @@
+---
+title: Buttons
+description: A collection of animated button components with various styles and effects
+---
+
+Sync UI offers a variety of button styles and animations to enhance your user interface.
+
+## Installation
+
+Buttons in Sync UI are built using Material-UI and Framer Motion:
+
+```bash
+npm install @mui/material @emotion/react @emotion/styled framer-motion react-icons
+```
+
+## Variants
+
+### Neubrutalism
+
+A bold, blocky button style with a distinctive shadow.
+
+```jsx
+import { Button, useTheme } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const NeubrutalismButton = () => {
+  const theme = useTheme();
+
+  return (
+    <MotionButton
+      variant="contained"
+      sx={{
+        backgroundColor: theme.palette.mode === "dark" ? "#000000" : "#FFFFFF",
+        color: "text.primary",
+        border: "1px solid",
+        borderColor: "divider",
+        boxShadow: "4px 4px 0 currentColor",
+        borderRadius: 0,
+        transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+        "&:hover": {
+          borderColor: "divider",
+          boxShadow: "2px 2px 0 currentColor",
+          backgroundColor: theme.palette.mode === "dark" ? "#000000" : "#FFFFFF",
+        },
+      }}
+    >
+      Neubrutalism
+    </MotionButton>
+  );
+};
+
+export default NeubrutalismButton;
+```
+
+### Animated Border
+
+A button with an animated border effect.
+
+```jsx
+import { Button, Box, useTheme, Typography } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const AnimatedBorderButton = () => {
+  const theme = useTheme();
+
+  return (
+    <MotionButton
+      variant="outlined"
+      sx={{
+        position: "relative",
+        overflow: "hidden",
+        borderRadius: 1,
+        maxWidth: 120,
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        borderColor: "divider",
+        "&:hover": {
+          borderColor: "divider",
+          outline: 0,
+        },
+      }}
+    >
+      <Box
+        sx={{
+          position: "absolute",
+          inset: -2,
+          overflow: "hidden",
+          borderRadius: "inherit",
+          padding: 0,
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: "-200%",
+            background:
+              theme.palette.mode === "dark"
+                ? "conic-gradient(from 0deg, transparent 0 340deg, #FFF 360deg)"
+                : "conic-gradient(from 0deg, transparent 0 340deg, #000 360deg)",
+            animation: "rotate 3s linear infinite",
+          },
+          "@keyframes rotate": {
+            from: { transform: "rotate(0deg)" },
+            to: { transform: "rotate(360deg)" },
+          },
+        }}
+      />
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 1,
+          borderRadius: "inherit",
+          backgroundColor: theme.palette.mode === "dark" ? "#000000" : "#FFFFFF",
+        }}
+      />
+      <Typography variant="body2" style={{ zIndex: 1, fontWeight: 500 }}>
+        Border
+      </Typography>
+    </MotionButton>
+  );
+};
+
+export default AnimatedBorderButton;
+```
+
+### Gradient Shine
+
+A button with a gradient shine effect.
+
+```jsx
+import { Button, useTheme } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const GradientShineButton = () => {
+  const theme = useTheme();
+
+  return (
+    <MotionButton
+      variant="contained"
+      sx={{
+        background:
+          theme.palette.mode === "light"
+            ? "linear-gradient(110deg, #fff 45%, #e4e4e7 55%, #fff)"
+            : "linear-gradient(110deg, #000 45%, #333 55%, #000)",
+        backgroundSize: "200% 100%",
+        animation: "shine 2s linear infinite",
+        color: "text.primary",
+        border: "1px solid",
+        borderColor: "divider",
+        "&:hover": {
+          borderColor: "divider",
+        },
+        "@keyframes shine": {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
+      }}
+    >
+      Gradient Shine
+    </MotionButton>
+  );
+};
+
+export default GradientShineButton;
+```
+
+### Underline
+
+A text button with an animated underline effect on hover.
+
+```jsx
+import { Button } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const UnderlineButton = () => {
+  return (
+    <MotionButton
+      variant="text"
+      sx={{
+        color: "text.primary",
+        position: "relative",
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          width: "100%",
+          height: "1px",
+          bottom: 0,
+          left: 0,
+          backgroundColor: "text.primary",
+          transform: "scaleX(0)",
+          transformOrigin: "bottom right",
+          transition: "transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
+        },
+        "&:hover::after": {
+          transform: "scaleX(1)",
+          transformOrigin: "bottom left",
+        },
+        "&:hover": {
+          backgroundColor: "transparent",
+        },
+      }}
+    >
+      Underline
+    </MotionButton>
+  );
+};
+
+export default UnderlineButton;
+```
+
+### Send Icon
+
+A button that transitions from text to an icon on hover.
+
+```jsx
+import { Button, useTheme } from "@mui/material";
+import { motion } from "motion/react";
+import { IoSend } from "react-icons/io5";
+
+const MotionButton = motion.create(Button);
+
+const SendIconButton = () => {
+  const theme = useTheme();
+
+  return (
+    <MotionButton
+      variant="outlined"
+      sx={{
+        backgroundColor: theme.palette.mode === "dark" ? "#000000" : "#FFFFFF",
+        color: "text.primary",
+        borderColor: "divider",
+        position: "relative",
+        overflow: "hidden",
+        minWidth: "120px",
+        height: "44px",
+        padding: "10px 20px",
+        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        "&:hover": {
+          backgroundColor: "text.primary",
+          color: "background.paper",
+          borderColor: "divider",
+        },
+        "& .icon, & .text": {
+          position: "absolute",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100%",
+          width: "100%",
+          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        },
+        "& .icon": {
+          transform: "translateX(-100%)",
+        },
+        "& .text": {
+          fontSize: "1rem",
+        },
+        "&:hover .icon": {
+          transform: "translateX(0)",
+        },
+        "&:hover .text": {
+          transform: "translateX(100%)",
+        },
+      }}
+    >
+      <span className="icon">
+        <IoSend size={20} />
+      </span>
+      <span className="text">Send</span>
+    </MotionButton>
+  );
+};
+
+export default SendIconButton;
+```
+
+### Expand
+
+A button that expands to reveal an icon on hover.
+
+```jsx
+import { useState } from "react";
+import { Button, Box } from "@mui/material";
+import { motion, AnimatePresence } from "motion/react";
+import { RxPlus } from "react-icons/rx";
+
+const MotionButton = motion.create(Button);
+
+const ExpandButton = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <MotionButton
+      variant="outlined"
+      onMouseEnter={() => setIsExpanded(true)}
+      onMouseLeave={() => setIsExpanded(false)}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        borderColor: "divider",
+        "&:hover": { borderColor: "divider" },
+      }}
+    >
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        Expand
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.span
+              initial={{ opacity: 0, width: 0, marginLeft: 0 }}
+              animate={{ opacity: 1, width: "auto", marginLeft: 8 }}
+              exit={{ opacity: 0, width: 0, marginLeft: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              style={{ display: "inline-flex", overflow: "hidden" }}
+            >
+              <RxPlus size={18} />
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </Box>
+    </MotionButton>
+  );
+};
+
+export default ExpandButton;
+```
+
+### Hover Arrow
+
+A button with an animated arrow that appears on hover.
+
+```jsx
+import { useState } from "react";
+import { Button, Box } from "@mui/material";
+import { motion, AnimatePresence } from "motion/react";
+import { RxArrowRight } from "react-icons/rx";
+
+const MotionButton = motion.create(Button);
+
+const HoverArrowButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <MotionButton
+      variant="outlined"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        fontWeight: 500,
+        borderColor: "divider",
+        transition: "none",
+        "&:hover": {
+          borderColor: "divider",
+          backgroundColor: "transparent",
+          outline: 0,
+        },
+      }}
+    >
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        <AnimatePresence>
+          {isHovered && (
+            <motion.span
+              initial={{ opacity: 0, width: 0, marginRight: 0 }}
+              animate={{ opacity: 1, width: "auto", marginRight: 8 }}
+              exit={{ opacity: 0, width: 0, marginRight: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              style={{ display: "inline-flex", overflow: "hidden" }}
+            >
+              <RxArrowRight size={19} />
+            </motion.span>
+          )}
+        </AnimatePresence>
+        Hover Arrow
+        <AnimatePresence>
+          {!isHovered && (
+            <motion.span
+              initial={{ opacity: 0, width: 0, marginLeft: 0 }}
+              animate={{ opacity: 1, width: "auto", marginLeft: 8 }}
+              exit={{ opacity: 0, width: 0, marginLeft: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              style={{ display: "inline-flex", overflow: "hidden" }}
+            >
+              <RxArrowRight size={19} />
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </Box>
+    </MotionButton>
+  );
+};
+
+export default HoverArrowButton;
+```
+
+### Glitch
+
+A button with a glitch effect.
+
+```jsx
+import { Button, useTheme } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const GlitchButton = () => {
+  const theme = useTheme();
+
+  return (
+    <MotionButton
+      sx={{
+        position: "relative",
+        color: "text.primary",
+        backgroundColor: theme.palette.mode === "dark" ? "#000" : "#fff",
+        border: "1px solid",
+        borderColor: "divider",
+        overflow: "hidden",
+        padding: "8px 20px",
+        transition: "all 0.2s ease",
+        "&::before, &::after": {
+          content: '"Glitch"',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: "inherit",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        },
+        "&::before": {
+          left: "2px",
+          textShadow: theme.palette.mode === "dark" ? "2px 0 #fff" : "2px 0 #000",
+          clipPath: "inset(0 100% 0 0)",
+          animation: "glitch-anim 2.5s infinite linear alternate-reverse",
+        },
+        "&::after": {
+          left: "-2px",
+          textShadow: theme.palette.mode === "dark" ? "-2px 0 #fff" : "-2px 0 #000",
+          clipPath: "inset(0 0 0 100%)",
+          animation: "glitch-anim 2.5s infinite linear alternate-reverse 1.25s",
+        },
+        "&:hover": {
+          color: theme.palette.mode === "dark" ? "#000" : "#fff",
+          backgroundColor: theme.palette.mode === "dark" ? "#fff" : "#000",
+        },
+      }}
+    >
+      Glitch
+    </MotionButton>
+  );
+};
+
+export default GlitchButton;
+```
+
+### Outline Fill
+
+A button that fills with color on hover.
+
+```jsx
+import { Button } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const OutlineFillButton = () => {
+  return (
+    <MotionButton
+      variant="outlined"
+      sx={{
+        color: "text.primary",
+        borderColor: "divider",
+        position: "relative",
+        overflow: "hidden",
+        zIndex: 1,
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "text.primary",
+          transform: "scaleX(0)",
+          transformOrigin: "right",
+          transition: "transform 0.25s ease",
+          zIndex: -1,
+        },
+        "&:hover": {
+          color: "background.paper",
+          "&::before": {
+            transform: "scaleX(1)",
+            transformOrigin: "left",
+          },
+        },
+      }}
+    >
+      Fill
+    </MotionButton>
+  );
+};
+
+export default OutlineFillButton;
+```
+
+### Elastic Slide
+
+A button with an elastic sliding effect that reveals an icon.
+
+```jsx
+import { Button } from "@mui/material";
+import { motion } from "motion/react";
+import { RxArrowRight } from "react-icons/rx";
+
+const MotionButton = motion.create(Button);
+
+const ElasticSlideButton = () => {
+  return (
+    <MotionButton
+      variant="outlined"
+      whileHover="hover"
+      sx={{
+        color: "text.primary",
+        borderColor: "divider",
+        overflow: "hidden",
+        "&:hover": {
+          borderColor: "divider",
+          backgroundColor: "transparent",
+        },
+      }}
+    >
+      <motion.div
+        style={{ display: "flex", alignItems: "center" }}
+        variants={{
+          hover: {
+            x: -5,
+            transition: {
+              type: "spring",
+              stiffness: 500,
+              damping: 15,
+            },
+          },
+        }}
+      >
+        Elastic
+        <motion.div
+          style={{ marginLeft: 8, display: "flex", opacity: 0, x: -10 }}
+          variants={{
+            hover: {
+              opacity: 1,
+              x: 0,
+              transition: {
+                type: "spring",
+                stiffness: 500,
+                damping: 15,
+              },
+            },
+          }}
+        >
+          <RxArrowRight size={19} />
+        </motion.div>
+      </motion.div>
+    </MotionButton>
+  );
+};
+
+export default ElasticSlideButton;
+```
+
+## Customization
+
+All button variants can be customized using Material-UI's `sx` prop. You can modify:
+
+- Colors using theme palette values
+- Sizes by adjusting padding, font size, and icon sizes
+- Animation timing and easing functions
+- Border styles and shadows
+- Hover states and transitions
+
+## Dependencies
+
+- `@mui/material` - Material-UI components
+- `framer-motion` or `motion/react` - Animation library
+- `react-icons` - Icon library (for variants that use icons)

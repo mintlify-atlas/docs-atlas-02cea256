@@ -1,0 +1,317 @@
+---
+title: Manual Installation
+description: Add Sync UI to any existing React project with manual setup
+---
+
+This guide will help you manually add Sync UI to any existing React project, regardless of your build tool or framework.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+<Steps>
+  <Step title="Existing React Project">
+    A working React project (React 18.0 or later recommended)
+  </Step>
+  <Step title="Package Manager">
+    npm, yarn, pnpm, or bun installed on your machine
+  </Step>
+  <Step title="Node.js">
+    Node.js 18.17 or later installed
+  </Step>
+</Steps>
+
+<Note>
+  Sync UI works with any React setup including custom webpack configs, Parcel, Snowpack, or other build tools.
+</Note>
+
+## Install Dependencies
+
+Add the required packages for Sync UI to your project:
+
+<CodeGroup>
+```bash npm
+npm install @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash yarn
+yarn add @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash pnpm
+pnpm add @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash bun
+bun add @mui/material @emotion/react @emotion/styled motion react-icons
+```
+</CodeGroup>
+
+### Package Details
+
+| Package | Version | Purpose |
+|---------|---------|--------|
+| `@mui/material` | ^7.3.6 | Core Material UI components |
+| `@emotion/react` | ^11.14.0 | CSS-in-JS styling engine (required by MUI) |
+| `@emotion/styled` | ^11.14.1 | Styled components API (required by MUI) |
+| `motion` | ^12.23.25 | Animation library (motion/react) |
+| `react-icons` | ^5.2.1 | Icon library with thousands of icons |
+
+<Warning>
+  Both `@emotion/react` and `@emotion/styled` are required for Material UI to work properly. Don't skip either one!
+</Warning>
+
+## Verify Installation
+
+After installation, verify that all packages are in your `package.json`:
+
+```json package.json
+{
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.6",
+    "motion": "^12.23.25",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^5.2.1"
+  }
+}
+```
+
+## Start Development
+
+Run your development server. The command depends on your project setup:
+
+<CodeGroup>
+```bash npm (most projects)
+npm start
+```
+
+```bash npm (Vite/Next.js)
+npm run dev
+```
+
+```bash yarn (most projects)
+yarn start
+```
+
+```bash yarn (Vite/Next.js)
+yarn dev
+```
+
+```bash pnpm (most projects)
+pnpm start
+```
+
+```bash pnpm (Vite/Next.js)
+pnpm dev
+```
+
+```bash bun (most projects)
+bun start
+```
+
+```bash bun (Vite/Next.js)
+bun dev
+```
+</CodeGroup>
+
+## Using Components
+
+Now you can start using Sync UI components in your project:
+
+<Steps>
+  <Step title="Create a Component">
+    Create a new component file in your project, for example:
+    
+    ```jsx src/components/MyButton.jsx
+    import { Button, useTheme } from "@mui/material";
+    import { motion } from "motion/react";
+    
+    const MotionButton = motion.create(Button);
+    
+    const MyButton = () => {
+      const theme = useTheme();
+    
+      return (
+        <MotionButton
+          variant="outlined"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          sx={{
+            borderColor: "divider",
+            color: "text.primary",
+          }}
+        >
+          Click Me
+        </MotionButton>
+      );
+    };
+    
+    export default MyButton;
+    ```
+  </Step>
+  
+  <Step title="Import the Component">
+    Import and use your component anywhere in your app:
+    
+    ```jsx src/App.jsx
+    import MyButton from './components/MyButton';
+    
+    function App() {
+      return (
+        <div className="App">
+          <h1>My App with Sync UI</h1>
+          <MyButton />
+        </div>
+      );
+    }
+    
+    export default App;
+    ```
+  </Step>
+  
+  <Step title="Browse and Copy">
+    Visit the [component library](/components) to browse and copy more components
+  </Step>
+</Steps>
+
+## Example: Complete Button Component
+
+Here's a complete example using one of Sync UI's popular button styles:
+
+```jsx src/components/OutlineFillButton.jsx
+import { Button } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const OutlineFillButton = () => {
+  return (
+    <MotionButton
+      variant="outlined"
+      sx={{
+        color: "text.primary",
+        borderColor: "divider",
+        position: "relative",
+        overflow: "hidden",
+        zIndex: 1,
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "text.primary",
+          transform: "scaleX(0)",
+          transformOrigin: "right",
+          transition: "transform 0.25s ease",
+          zIndex: -1,
+        },
+        "&:hover": {
+          color: "background.paper",
+          "&::before": {
+            transform: "scaleX(1)",
+            transformOrigin: "left",
+          },
+        },
+      }}
+    >
+      Fill
+    </MotionButton>
+  );
+};
+
+export default OutlineFillButton;
+```
+
+## TypeScript Support (Optional)
+
+If you're using TypeScript, you may want to install type definitions:
+
+```bash
+npm install --save-dev @types/react @types/react-dom
+```
+
+MUI and Motion come with built-in TypeScript support, so no additional types are needed for those packages.
+
+## Build Configuration
+
+Sync UI components should work with your existing build configuration. However, if you encounter issues:
+
+<AccordionGroup>
+  <Accordion title="Webpack Configuration">
+    Make sure your webpack config handles JSX and CSS-in-JS:
+    
+    ```js webpack.config.js
+    module.exports = {
+      module: {
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: ['babel-loader'],
+          },
+        ],
+      },
+      resolve: {
+        extensions: ['.js', '.jsx'],
+      },
+    };
+    ```
+  </Accordion>
+  
+  <Accordion title="Babel Configuration">
+    Ensure your `.babelrc` includes React preset:
+    
+    ```json .babelrc
+    {
+      "presets": ["@babel/preset-react"]
+    }
+    ```
+  </Accordion>
+  
+  <Accordion title="ESLint Configuration">
+    If using ESLint, make sure it's configured for React:
+    
+    ```json .eslintrc.json
+    {
+      "extends": ["eslint:recommended", "plugin:react/recommended"],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        }
+      }
+    }
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## You're All Set!
+
+You can now start building with Sync UI:
+
+<CardGroup cols={2}>
+  <Card title="Components" icon="cube" href="/components">
+    Copy-paste ready UI elements with animations
+  </Card>
+  <Card title="Blocks" icon="layer-group" href="/blocks">
+    Pre-built page sections for landing pages
+  </Card>
+  <Card title="Templates" icon="palette" href="/templates">
+    Professional templates to launch faster
+  </Card>
+  <Card title="Story" icon="book" href="/docs/story">
+    Learn about the journey behind Sync UI
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+Simply copy any component code from our library and paste it into your project. No additional setup needed!
+
+<Tip>
+  Sync UI components are framework-agnostic and work with any React setup. If you encounter any issues, check our [troubleshooting guide](/docs/installation#troubleshooting).
+</Tip>

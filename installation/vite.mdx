@@ -1,0 +1,256 @@
+---
+title: Vite Installation
+description: Set up Sync UI in your Vite project for fast development and optimized builds
+---
+
+This guide will help you set up Sync UI in a Vite project. Vite provides lightning-fast development with hot module replacement (HMR) and optimized production builds.
+
+## Create a New Project
+
+Create a new Vite application with React:
+
+<CodeGroup>
+```bash npm
+npm create vite@latest my-app -- --template react
+```
+
+```bash yarn
+yarn create vite my-app --template react
+```
+
+```bash pnpm
+pnpm create vite my-app --template react
+```
+
+```bash bun
+bun create vite my-app --template react
+```
+</CodeGroup>
+
+<Tip>
+  Use `--template react-ts` instead of `--template react` if you want to use TypeScript.
+</Tip>
+
+## Navigate to Your Project
+
+Move into your newly created project directory:
+
+```bash
+cd my-app
+```
+
+## Install Dependencies
+
+First, install the base dependencies that come with your Vite project:
+
+<CodeGroup>
+```bash npm
+npm install
+```
+
+```bash yarn
+yarn
+```
+
+```bash pnpm
+pnpm install
+```
+
+```bash bun
+bun install
+```
+</CodeGroup>
+
+Then add the required packages for Sync UI:
+
+<CodeGroup>
+```bash npm
+npm install @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash yarn
+yarn add @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash pnpm
+pnpm add @mui/material @emotion/react @emotion/styled motion react-icons
+```
+
+```bash bun
+bun add @mui/material @emotion/react @emotion/styled motion react-icons
+```
+</CodeGroup>
+
+### What's Installed
+
+| Package | Purpose |
+|---------|--------|
+| `@mui/material` | Core Material UI components |
+| `@emotion/react` | CSS-in-JS styling engine (required by MUI) |
+| `@emotion/styled` | Styled components API (required by MUI) |
+| `motion` | Animation library (motion/react) |
+| `react-icons` | Icon library with thousands of icons |
+
+## Start Development
+
+Launch your development server:
+
+<CodeGroup>
+```bash npm
+npm run dev
+```
+
+```bash yarn
+yarn dev
+```
+
+```bash pnpm
+pnpm dev
+```
+
+```bash bun
+bun dev
+```
+</CodeGroup>
+
+Open [http://localhost:5173](http://localhost:5173) in your browser to see your app running.
+
+<Note>
+  Vite uses port 5173 by default, unlike Next.js which uses port 3000.
+</Note>
+
+## Using Components
+
+Now you can start using Sync UI components in your Vite project:
+
+<Steps>
+  <Step title="Create a Component File">
+    Create a new file in your `src` directory, e.g., `src/components/AnimatedButton.jsx`
+  </Step>
+  
+  <Step title="Copy Component Code">
+    Browse the [component library](/components) and copy the code for any component
+  </Step>
+  
+  <Step title="Import and Use">
+    Import your component in `App.jsx` or any other component:
+    
+    ```jsx
+    import AnimatedButton from './components/AnimatedButton';
+    
+    function App() {
+      return (
+        <div className="App">
+          <AnimatedButton />
+        </div>
+      );
+    }
+    
+    export default App;
+    ```
+  </Step>
+</Steps>
+
+## Example Component
+
+Here's a complete example of a Sync UI button in Vite:
+
+```jsx src/components/GradientShineButton.jsx
+import { Button, useTheme } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
+
+const GradientShineButton = () => {
+  const theme = useTheme();
+
+  return (
+    <MotionButton
+      variant="contained"
+      sx={{
+        background:
+          theme.palette.mode === "light"
+            ? "linear-gradient(110deg, #fff 45%, #e4e4e7 55%, #fff)"
+            : "linear-gradient(110deg, #000 45%, #333 55%, #000)",
+        backgroundSize: "200% 100%",
+        animation: "shine 2s linear infinite",
+        color: "text.primary",
+        border: "1px solid",
+        borderColor: "divider",
+        "&:hover": {
+          borderColor: "divider",
+        },
+        "@keyframes shine": {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
+      }}
+    >
+      Gradient Shine
+    </MotionButton>
+  );
+};
+
+export default GradientShineButton;
+```
+
+Then use it in your `App.jsx`:
+
+```jsx src/App.jsx
+import GradientShineButton from './components/GradientShineButton';
+
+function App() {
+  return (
+    <div style={{ padding: '20px' }}>
+      <h1>Sync UI with Vite</h1>
+      <GradientShineButton />
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Vite Configuration (Optional)
+
+Your `vite.config.js` should work out of the box, but here's a basic configuration for reference:
+
+```js vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+})
+```
+
+<Tip>
+  Vite's fast HMR makes iterating on Sync UI components incredibly smooth. Changes appear instantly in your browser!
+</Tip>
+
+## You're All Set!
+
+You can now start building with Sync UI in Vite:
+
+<CardGroup cols={2}>
+  <Card title="Components" icon="cube" href="/components">
+    Copy-paste ready UI elements with animations
+  </Card>
+  <Card title="Blocks" icon="layer-group" href="/blocks">
+    Pre-built page sections for landing pages
+  </Card>
+  <Card title="Templates" icon="palette" href="/templates">
+    Professional templates to launch faster
+  </Card>
+  <Card title="Story" icon="book" href="/docs/story">
+    Learn about the journey behind Sync UI
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+Simply copy any component code from our library and paste it into your project. No additional setup needed!
+
+<Note>
+  All Sync UI components work seamlessly with Vite's fast refresh and hot module replacement.
+</Note>
